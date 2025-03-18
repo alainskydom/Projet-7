@@ -20,7 +20,7 @@ import os
 try:
     best_model = pickle.load(open(r"API/model.pkl", 'rb'))
 except FileNotFoundError:
-    print("Error: Model file not found.  Make sure 'best_model.pkl' is in the correct directory.")
+    print("Error: Model file not found.  Make sure 'model.pkl' is in the correct directory.")
     best_model = None # Handle the case where the model couldn't be loaded
 
 # Charger les données
