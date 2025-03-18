@@ -1,7 +1,7 @@
-import matplotlib
-import matplotlib.pyplot as plt
+#import matplotlib
+#import matplotlib.pyplot as plt
 import json
-from typing import List
+#from typing import List
 from flask import Flask, request, jsonify
 import pickle
 import pandas as pd
@@ -9,7 +9,7 @@ import numpy as np
 from lightgbm import LGBMClassifier
 import io
 import os
-import uuid
+#import uuid
 
 
 
@@ -18,13 +18,13 @@ import uuid
 
 # Charger le meilleur modèle
 try:
-    best_model = pickle.load(open(r"C:\Users\ascia\anaconda_projects\Projet 7- Scoring\mlflow_model\model.pkl", 'rb'))
+    best_model = pickle.load(open(r"API/model.pkl", 'rb'))
 except FileNotFoundError:
     print("Error: Model file not found.  Make sure 'best_model.pkl' is in the correct directory.")
     best_model = None # Handle the case where the model couldn't be loaded
 
 # Charger les données
-df_ = pd.read_csv(r"C:\Users\ascia\anaconda_projects\Projet 7- Scoring\df_.csv")[0:100]
+df_ = pd.read_csv(r"API/df_.csv")[0:100]
 df_=df_.loc[:, ~df_.columns.str.match ('Unnamed')]
 df_ = df_.drop(['TARGET', 'SK_ID_CURR'], axis=1)
 # df.drop(columns='index', inplace=True)
