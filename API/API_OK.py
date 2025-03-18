@@ -24,7 +24,7 @@ except FileNotFoundError:
     best_model = None # Handle the case where the model couldn't be loaded
 
 # Charger les données
-df_ = pd.read_csv(r"API/df_.csv")[0:100]
+df_ = pd.read_csv(r"API/df_api.csv")[0:100]
 df_=df_.loc[:, ~df_.columns.str.match ('Unnamed')]
 df_ = df_.drop(['TARGET', 'SK_ID_CURR'], axis=1)
 # df.drop(columns='index', inplace=True)
