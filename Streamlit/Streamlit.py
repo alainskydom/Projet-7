@@ -27,7 +27,7 @@ st.set_page_config(page_title='Credit Score App', page_icon='💰', layout='wide
 @st.cache(allow_output_mutation=True)
 def load_model():
     try:
-        return pickle.load(open(r"C:\Users\ascia\anaconda_projects\Projet 7- Scoring\mlflow_model\model.pkl", 'rb'))
+        return pickle.load(open(r"model.pkl", 'rb'))
     except FileNotFoundError:
         print("Error: Model file not found. Make sure 'model.pkl' is in the correct directory.")
         return None
@@ -36,7 +36,7 @@ best_model = load_model()
 
 
 # Charger les données
-df_ = pd.read_csv(r"C:\Users\ascia\anaconda_projects\Projet 7- Scoring\df_.csv")[0:100]
+df_ = pd.read_csv(r"(r"df_api.csv"")
 df_=df_.loc[:, ~df_.columns.str.match ('Unnamed')]
 df_calc= df_.drop(['TARGET', 'SK_ID_CURR'], axis=1)
 # df.drop(columns='index', inplace=True)
