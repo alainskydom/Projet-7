@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 from typing import List
-from flask import Flask, request, jsonify
+#from flask import Flask, request, jsonify
 import pickle
 import pandas as pd
 import numpy as np
