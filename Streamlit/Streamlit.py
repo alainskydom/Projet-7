@@ -11,7 +11,7 @@ import os
 import uuid
 from zipfile import ZipFile
 #import seaborn as sns
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 st.set_page_config(page_title='Credit Score App', page_icon='💰', layout='wide',
                    initial_sidebar_state='auto', menu_items={
