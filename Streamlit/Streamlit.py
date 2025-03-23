@@ -10,7 +10,7 @@ import io
 import os
 import uuid
 from zipfile import ZipFile
-import seaborn as sns
+#import seaborn as sns
 import matplotlib.pyplot as plt
 
 st.set_page_config(page_title='Credit Score App', page_icon='💰', layout='wide',
