@@ -27,7 +27,7 @@ st.set_page_config(page_title='Credit Score App', page_icon='💰', layout='wide
 @st.cache(allow_output_mutation=True)
 def load_model():
     try:
-        return pickle.load(open(r"model.pkl", 'rb'))
+        return pickle.load(open(r"Streamlit/model.pkl", 'rb'))
     except FileNotFoundError:
         print("Error: Model file not found. Make sure 'model.pkl' is in the correct directory.")
         return None
