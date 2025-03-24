@@ -59,7 +59,7 @@ ID = st.sidebar.radio(
 
 st.write("You selected:", ID)
 
-id=ID[0]
+id=ID
 
 df_selection = df_[df_["SK_ID_CURR"]== id]
 df_selection=df_selection.drop(['TARGET', 'SK_ID_CURR'], axis=1)
