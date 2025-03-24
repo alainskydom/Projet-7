@@ -42,7 +42,7 @@ df_calc= df_.drop(['TARGET', 'SK_ID_CURR'], axis=1)
 # df.drop(columns='index', inplace=True)
 
 # Define the threshold of for application.
-threshold = 0.6
+threshold = 0.52
 
 #---- SIDEBAR ----
 st.sidebar.header("Please choose the application ID:")
@@ -89,7 +89,7 @@ if run:
         st.markdown(
             'This credit score indicates that this person is likely to repay a loan, so the risk of giving them credit is low.')
     elif score < threshold:
-        placeholder.markdown('Your credit score is **REGULAR**.')
+        placeholder.markdown('Your credit score is **REFUSED**.')
         st.markdown(
             'This credit score indicates that this person is likely to repay a loan, but can occasionally miss some payments. Meaning that the risk of giving them credit is medium.')
     elif score == -1:
