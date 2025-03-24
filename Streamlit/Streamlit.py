@@ -42,7 +42,7 @@ df_calc= df_.drop(['TARGET', 'SK_ID_CURR'], axis=1)
 # df.drop(columns='index', inplace=True)
 
 # Define the threshold of for application.
-threshold = 0.50
+threshold = 0.4
 
 #---- SIDEBAR ----
 st.sidebar.header("Please choose the application ID:")
