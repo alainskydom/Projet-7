@@ -73,6 +73,10 @@ if df_selection.empty:
 
 run = st.button( 'Assess credit application')
 
+plt.text(0.7, 1.05, "POOR", horizontalalignment='left', size='medium', color='white', weight='semibold')
+plt.text(2.5, 1.05, "REGULAR", horizontalalignment='left', size='medium', color='white', weight='semibold')
+plt.text(4.7, 1.05, "GOOD", horizontalalignment='left', size='medium', color='white', weight='semibold')
+
 placeholder = st.empty()
 
 st.header('Credit Score Results')
