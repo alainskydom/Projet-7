@@ -46,11 +46,16 @@ threshold = 0.6
 
 #---- SIDEBAR ----
 st.sidebar.header("Please choose the application ID:")
-ID = st.sidebar.multiselect(
+ID = st.sidebar.radio(
     "Select the ID:",
-    options=df_["SK_ID_CURR"].unique(),
-    default=df_["SK_ID_CURR"].unique()
+    options=df_["SK_ID_CURR"].unique()
 )
+
+#ID = st.sidebar.multiselect(
+    #"Select the ID:",
+    #options=df_["SK_ID_CURR"].unique(),
+    #default=df_["SK_ID_CURR"].unique()
+#)
 
 st.write("You selected:", ID)
 
