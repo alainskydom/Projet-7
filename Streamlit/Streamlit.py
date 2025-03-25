@@ -82,8 +82,8 @@ placeholder = st.empty()
 st.header('Credit Score Results')
 
 if run:
-    features = df_selection.to_numpy().reshape(1, -1)
-    score = best_model.predict_proba(features)[:, 1]
+    #features = df_selection.to_numpy().reshape(1, -1)
+    score = best_model.predict_proba(df_selection)[:, 1]
     #features = df_.loc[ID, df_calc.columns].to_numpy().reshape(1, -1)
     st.write("The Score of the Client is ", score)
   
