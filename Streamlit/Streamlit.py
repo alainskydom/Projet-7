@@ -44,7 +44,7 @@ df_=df_.loc[:, ~df_.columns.str.match ('Unnamed')]
 threshold = 0.08
 
 #---- SIDEBAR ----
-st.sidebar.header("Please choose the application ID:")
+st.sidebar.header("Merci de selectionner l'identiifant de la demande de crédit:")
 ID = st.sidebar.radio(
     "Select the ID:",
     options=df_["SK_ID_CURR"].unique()
@@ -56,7 +56,7 @@ ID = st.sidebar.radio(
     #default=df_["SK_ID_CURR"].unique()
 #)
 
-st.write("You selected:", ID)
+st.write("Vous avez selectionné", ID)
 
 id=ID
 
@@ -70,7 +70,7 @@ if df_selection.empty:
     st.warning("No data available based on the current filter settings!")
     st.stop() # This will halt the app from further execution.
 
-run = st.button( 'Assess credit application')
+run = st.button( 'Evaluer le score de crédit de la demande')
 
 plt.text(0.7, 1.05, "POOR", horizontalalignment='left', size='medium', color='white', weight='semibold')
 plt.text(2.5, 1.05, "REGULAR", horizontalalignment='left', size='medium', color='white', weight='semibold')
@@ -78,7 +78,7 @@ plt.text(4.7, 1.05, "GOOD", horizontalalignment='left', size='medium', color='wh
 
 placeholder = st.empty()
 
-st.header('Credit Score Results')
+st.header('Résultats')
 
 if run:
     #features = df_selection.to_numpy().reshape(1, -1)
