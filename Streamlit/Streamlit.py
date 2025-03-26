@@ -44,9 +44,9 @@ df_=df_.loc[:, ~df_.columns.str.match ('Unnamed')]
 threshold = 0.08
 
 #---- SIDEBAR ----
-st.sidebar.header("Merci de selectionner l'identiifant de la demande de crédit:")
+st.sidebar.header("Merci de selectionner la demande de crédit:")
 ID = st.sidebar.radio(
-    "Select the ID:",
+    "Choisissez l'identifiant du dossier:",
     options=df_["SK_ID_CURR"].unique()
 )
 
