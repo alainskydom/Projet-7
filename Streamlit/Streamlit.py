@@ -12,7 +12,7 @@ from zipfile import ZipFile
 #import seaborn as sns
 import matplotlib.pyplot as plt
 
-st.set_page_config(page_title='Credit Score App', page_icon='💰', layout='wide',
+st.set_page_config(page_title='Credit Score Application', page_icon='💰', layout='wide',
                    initial_sidebar_state='auto', menu_items={
         'Get Help': None,
         'Report a bug': None,
