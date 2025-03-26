@@ -62,7 +62,7 @@ st.write("You selected:", ID)
 id=ID
 
 df_selection = df_[df_["SK_ID_CURR"]== id]
-df_selection=df_selection.drop(["SK_ID_CURR", axis=1)
+df_selection=df_selection.drop("SK_ID_CURR", axis=1)
 #except (KeyError, TypeError):
     #print("Error: Application ID not found. Make sure the ID is correct.")
 
