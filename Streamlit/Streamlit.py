@@ -41,7 +41,7 @@ df_=df_.loc[:, ~df_.columns.str.match ('Unnamed')]
 # df.drop(columns='index', inplace=True)
 
 # Define the threshold of for application.
-threshold = 0.58
+threshold = 0.08
 
 #---- SIDEBAR ----
 st.sidebar.header("Please choose the application ID:")
@@ -88,17 +88,17 @@ if run:
   
 
 
-    if score >= threshold :
+    if score <= threshold :
         st.balloons()
         t1 = plt.Polygon([[5, 0.5], [5.5, 0], [4.5, 0]], color='red')
-        placeholder.markdown('Your credit score is **GOOD**! Congratulations!')
+        placeholder.markdown('Votre demande de crédit est acceptée! Bravo!')
         st.markdown(
-            'This credit score indicates that this person is likely to repay a loan, so the risk of giving them credit is low.')
-    elif score < threshold:
+            'Compte tenu des informations produites par le client le risque de défaut est faible')
+    elif score > threshold:
         t1 = plt.Polygon([[3, 0.5], [3.5, 0], [2.5, 0]], color='red')
-        placeholder.markdown('Your credit score is **REFUSED**.')
+        placeholder.markdown('Votre demande de crédit est refusée!')
         st.markdown(
-            'This credit score indicates that this person is likely to repay a loan, but can occasionally miss some payments. Meaning that the risk of giving them credit is medium.')
+            'Compte tenu des informations produites, il existe un risque significatif de défaut.')
     elif score == -1:
         t1 = plt.Polygon([[1, 0.5], [1.5, 0], [0.5, 0]], color='red')
         placeholder.markdown('Your credit score is **POOR**.')
