@@ -38,7 +38,7 @@ best_model = load_model()
 # Charger les données
 df_ = pd.read_csv(r"Streamlit/df_api.csv")
 df_=df_.loc[:, ~df_.columns.str.match ('Unnamed')]
-df_calc= df_.drop(['TARGET', 'SK_ID_CURR'], axis=1)
+#df_calc= df_.drop(['TARGET', 'SK_ID_CURR'], axis=1)
 # df.drop(columns='index', inplace=True)
 
 # Define the threshold of for application.
