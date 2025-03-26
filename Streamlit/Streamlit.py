@@ -42,7 +42,7 @@ df_=df_.loc[:, ~df_.columns.str.match ('Unnamed')]
 # df.drop(columns='index', inplace=True)
 
 # Define the threshold of for application.
-threshold = 0.15
+threshold = 0.58
 
 #---- SIDEBAR ----
 st.sidebar.header("Please choose the application ID:")
@@ -62,7 +62,7 @@ st.write("You selected:", ID)
 id=ID
 
 df_selection = df_[df_["SK_ID_CURR"]== id]
-df_selection=df_selection.drop(['TARGET', 'SK_ID_CURR'], axis=1)
+df_selection=df_selection.drop('SK_ID_CURR', axis=1)
 #except (KeyError, TypeError):
     #print("Error: Application ID not found. Make sure the ID is correct.")
 
