@@ -30,7 +30,7 @@ df_ = df_.drop(['TARGET', 'SK_ID_CURR'], axis=1)
 # df.drop(columns='index', inplace=True)
 
 # Define the threshold of for application.
-threshold = 0.6
+threshold = 0.08
 
 
 # --- Flask Setup ---
@@ -131,8 +131,8 @@ def predict():
     csv_buffer.seek(0)
 
     # Generate a filename with a timestamp
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"prediction_{idx}_{timestamp}.csv"
+    #timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    #filename = f"prediction_{idx}_{timestamp}.csv"
 
     # Return the CSV file as a downloadable attachment
     return send_file(
