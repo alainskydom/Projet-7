@@ -132,7 +132,7 @@ def predict():
 
     # Generate a filename with a timestamp
     #timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    #filename = f"prediction_{idx}_{timestamp}.csv"
+    filename = f"prediction_{idx}_{timestamp}.csv"
 
     # Return the CSV file as a downloadable attachment
     return send_file(
