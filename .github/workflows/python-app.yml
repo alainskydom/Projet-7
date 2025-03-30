@@ -38,7 +38,7 @@ jobs:
       run: |
        df=pd.read_csv('df_api_100/csv')
        
-       def test_predict_accepted():
+       def test_predict_refus():
           # Arrange
           loaded_model = pickle.load(open(r"Streamlit/model.pkl", 'rb'))
           print(loaded_model)
