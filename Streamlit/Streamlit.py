@@ -45,7 +45,7 @@ threshold = 0.08
 
 #---- SIDEBAR ----
 st.sidebar.header("Merci de selectionner la demande de crédit:")
-ID = st.sidebar.radio(
+ID = st.sidebar.selectbox(
     "Choisissez l'identifiant du dossier:",
     options=df_["SK_ID_CURR"].unique()
 )
