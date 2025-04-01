@@ -2,6 +2,7 @@ import pytest
 import pickle
 import pandas as pd
 from lightgbm import LGBMClassifier
+import warnings
 
 # Settings the warnings to be ignored
 warnings.filterwarnings('ignore')
