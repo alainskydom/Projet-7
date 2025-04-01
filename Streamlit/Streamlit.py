@@ -71,7 +71,7 @@ if df_selection.empty:
     st.stop() # This will halt the app from further execution.
 
 
-st.sidebar.write("**Age du client :**", int(df_['DAYS_BIRTH'].values /-365), "ans")
+st.sidebar.write("**Age du client :**", int(df_.iloc[id,2].values /-365), "ans")
 
 run = st.button( 'Evaluer le score de crédit de la demande')
 
