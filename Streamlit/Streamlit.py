@@ -56,7 +56,7 @@ ID = st.sidebar.selectbox(
     #default=df_["SK_ID_CURR"].unique()
 #)
 
-st.write("Vous avez selectionné", ID)
+st.write("Vous avez selectionné la demande n°", ID)
 
 id=ID
 
