@@ -79,7 +79,7 @@ st.sidebar.write("**Ancienneté dans l'emploi :**", int(df_.iloc[id,4]/-365), "a
 
   # Afficher les graphiques des variables:
 
-st.sidebar.header(":bar_chart:Plus d'informations")
+st.sidebar.header("Plus d'informations")
 st.sidebar.subheader("Visualisations univariées")
 variables=['CREDIT_TERM','DAYS_BIRTH', "DAYS_EMPLOYED", "AMT_ANNUITY", "CREDIT_INCOME_PERCENT","ANNUITY_INCOME_PERCENT"]
 features=st.sidebar.multiselect("les variables à illustrer:", variables)
