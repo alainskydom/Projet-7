@@ -98,7 +98,7 @@ for feature in features:
         h1=plt.hist(df_['feature'], edgecolor = 'k', bins = 25)
         plt.axvline(int(df_.iloc[id,'feature']), color="red", linestyle=":")
         plt.title('feature', size=5)
-        plt.xlabel('feature')', size=5)
+        plt.xlabel('feature', size=5)
         plt.ylabel('Fréquence', size=5)
         plt.xticks(size=5)
         plt.yticks(size=5)
