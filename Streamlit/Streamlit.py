@@ -95,7 +95,7 @@ for feature in features:
         #if feature=='DAYS_BIRTH':
         # Plot the distribution of feature
         st.write( feature)
-        h1=plt.hist(df_['feature'], edgecolor = 'k', bins = 25)
+        h1=plt.hist(df_[feature], edgecolor = 'k', bins = 25)
         plt.axvline(int(df_.iloc[id,'feature']), color="red", linestyle=":")
         plt.title('feature', size=5)
         plt.xlabel('feature', size=5)
