@@ -59,6 +59,7 @@ ID = st.sidebar.selectbox(
 st.write("Vous avez selectionné la demande n°", ID)
 
 id=ID
+id=int(id)
 
 df_selection = df_[df_["SK_ID_CURR"]== id]
 df_selection=df_selection.drop("SK_ID_CURR", axis=1)
