@@ -96,7 +96,7 @@ for feature in features:
         # Plot the distribution of feature
         st.write( feature)
         h1=plt.hist(df_[feature], edgecolor = 'k', bins = 25)
-        plt.axvline(int(df_.iloc[id,'feature']), color="red", linestyle=":")
+        plt.axvline(int(df_.iloc[id,feature]), color="red", linestyle=":")
         plt.title('feature', size=5)
         plt.xlabel('feature', size=5)
         plt.ylabel('Fréquence', size=5)
