@@ -75,7 +75,7 @@ st.sidebar.write("**Age du client :**", int(df_.iloc[id,2]/365), "ans")
 st.sidebar.write("**Durée du crédit :**", int(df_.iloc[id,0]), "ans")
 st.sidebar.write("**Ancienneté dans l'emploi :**", int(df_.iloc[id,4]/-365), "ans")
 st.sidebar.write("**Montant de l'annuité :**", int(df_.iloc[id,7]), "$")
-st.sidebar.write("**Montant du crédit rapporté au revenu :**", int(df_.iloc[id,0]), "fois le revenu")
+st.sidebar.write("**Charge du crédit par rapport au revenu :**", int(df_.iloc[id,11]*100), "%")
 
 run = st.button( 'Evaluer le score de crédit de la demande')
 
