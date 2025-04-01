@@ -82,28 +82,7 @@ st.sidebar.write("**Ancienneté dans l'emploi :**", int(df_.iloc[id,4]/-365), "a
 
 
 
-# Afficher les graphiques des variables:
 
-st.sidebar.header("Plus d'informations")
-st.sidebar.subheader("Visualisations univariées")
-variables=['CREDIT_TERM','DAYS_BIRTH', "DAYS_EMPLOYED", "AMT_ANNUITY", "CREDIT_INCOME_PERCENT","ANNUITY_INCOME_PERCENT"]
-features=st.sidebar.multiselect("les variables clés:", variables)
-
-for feature in features:
-        # Set the style of plots
-        plt.style.use('fivethirtyeight')
-        fig=plt.figure(figsize=(6, 6))
-        #if feature=='DAYS_BIRTH':
-        # Plot the distribution of feature
-        st.write( feature)
-        h1=plt.hist(df_[feature], edgecolor = 'k', bins = 25)
-        plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
-        plt.title(feature + " distribution", size=5)
-        plt.xlabel(feature, size=5)
-        plt.ylabel('Fréquence', size=5)
-        plt.xticks(size=5)
-        plt.yticks(size=5)
-        st.pyplot(fig)
 
 
 
@@ -146,3 +125,27 @@ if run:
         st.markdown(
             'This credit score indicates that this person is unlikely to repay a loan, so the risk of lending them credit is high.')
     plt.gca().add_patch(t1)
+
+
+# Afficher les graphiques des variables:
+
+st.sidebar.header("Plus d'informations")
+st.sidebar.subheader("Visualisations univariées")
+variables=['CREDIT_TERM','DAYS_BIRTH', "DAYS_EMPLOYED", "AMT_ANNUITY", "CREDIT_INCOME_PERCENT","ANNUITY_INCOME_PERCENT"]
+features=st.sidebar.multiselect("les variables clés:", variables)
+
+for feature in features:
+        # Set the style of plots
+        plt.style.use('fivethirtyeight')
+        fig=plt.figure(figsize=(6, 6))
+        #if feature=='DAYS_BIRTH':
+        # Plot the distribution of feature
+        st.write( feature)
+        h1=plt.hist(df_[feature], edgecolor = 'k', bins = 25)
+        plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
+        plt.title(feature + " distribution", size=5)
+        plt.xlabel(feature, size=5)
+        plt.ylabel('Fréquence', size=5)
+        plt.xticks(size=5)
+        plt.yticks(size=5)
+        st.pyplot(fig)
