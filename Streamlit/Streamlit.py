@@ -73,6 +73,7 @@ if df_selection.empty:
 
 st.sidebar.write("**Age du client :**", int(df_.iloc[id,2]/365), "ans")
 st.sidebar.write("**Durée du crédit :**", int(df_.iloc[id,0]), "ans")
+st.sidebar.write("**Ancienneté dans l'emploi :**", int(df_.iloc[id,4]/365), "ans")
 
 run = st.button( 'Evaluer le score de crédit de la demande')
 
