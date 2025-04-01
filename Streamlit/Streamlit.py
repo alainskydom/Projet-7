@@ -88,7 +88,7 @@ st.sidebar.subheader("Visualisations univariées")
 variables=['CREDIT_TERM','DAYS_BIRTH', "DAYS_EMPLOYED", "AMT_ANNUITY", "CREDIT_INCOME_PERCENT","ANNUITY_INCOME_PERCENT"]
 features=st.sidebar.multiselect("les variables clés:", variables)
 
- for feature in features:
+for feature in features:
         # Set the style of plots
         plt.style.use('fivethirtyeight')
         fig=plt.figure(figsize=(6, 6))
