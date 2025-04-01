@@ -7,7 +7,7 @@ import warnings
 # Settings the warnings to be ignored
 warnings.filterwarnings('ignore')
 
-df=pd.read_csv('Test/df_api_100.csv')
+df=pd.read_csv('Test/df_api_1000.csv')
        
 def test_predict_refus():
   # Arrange
