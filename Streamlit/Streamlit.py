@@ -77,6 +77,17 @@ st.sidebar.write("**Montant de l'annuité :**", int(df_.iloc[id,7]), "$")
 st.sidebar.write("**Charge du crédit par rapport au revenu :**", int(df_.iloc[id,11]*100), "%")
 st.sidebar.write("**Ancienneté dans l'emploi :**", int(df_.iloc[id,4]/-365), "ans")
 
+  # Afficher les graphiques des variables:
+
+st.sidebar.header(":bar_chart:Plus d'informations")
+st.sidebar.subheader("Visualisations univariées")
+variables=['CREDIT_TERM','DAYS_BIRTH', "DAYS_EMPLOYED", "AMT_ANNUITY", "CREDIT_INCOME_PERCENT","ANNUITY_INCOME_PERCENT"]
+features=st.sidebar.multiselect("les variables à illustrer:", variables)
+
+
+
+
+
 
 
 run = st.button( 'Evaluer le score de crédit de la demande')
