@@ -70,6 +70,9 @@ if df_selection.empty:
     st.warning("No data available based on the current filter settings!")
     st.stop() # This will halt the app from further execution.
 
+
+st.sidebar.write("**Age du client :**", int(df_['DAYS_BIRTH'].values /-365), "ans")
+
 run = st.button( 'Evaluer le score de crédit de la demande')
 
 plt.text(0.7, 1.05, "POOR", horizontalalignment='left', size='medium', color='white', weight='semibold')
