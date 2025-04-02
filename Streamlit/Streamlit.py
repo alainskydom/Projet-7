@@ -177,7 +177,7 @@ if st.sidebar.checkbox("Visualisez l'analyse bivarié des montants de l'annuité
         st.write( 'Annuité et durée du crédit')
         #data_score=load_data_predict()
         fig=plt.figure(figsize=(8,8))
-        ax=plt.scatter(x=int(df_['CREDIT_TERM']), y=int(df_['AMT_ANNUITY']), cmap='viridis')
+        ax=plt.scatter(x=df_['CREDIT_TERM'], y=df_['AMT_ANNUITY'], cmap='viridis')
         plt.axvline(df_['CREDIT_TERM'][df_.index==id], color="red", linestyle=":")
         plt.axhline(df_['AMT_ANNUITY'][df_.index==id], color="red", linestyle=":")
         #norm = plt.Normalize(data_score['score'].min()*100, data_score['score'] .max()*100)
