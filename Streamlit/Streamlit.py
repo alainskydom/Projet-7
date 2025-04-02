@@ -138,14 +138,37 @@ for feature in features:
         # Set the style of plots
         plt.style.use('fivethirtyeight')
         fig=plt.figure(figsize=(6, 6))
-        #if feature=='DAYS_BIRTH':
+        
+        if feature=='DAYS_BIRTH':
         # Plot the distribution of feature
-        st.write( feature)
-        h1=plt.hist(df_[feature], edgecolor = 'k', bins = 25)
-        plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
-        plt.title(feature + " distribution", size=5)
-        plt.xlabel(feature, size=5)
-        plt.ylabel('Fréquence', size=5)
-        plt.xticks(size=5)
-        plt.yticks(size=5)
-        st.pyplot(fig)
+          st.write( feature)
+          h1=plt.hist(int(df_['DAYS_BIRTH']/365), edgecolor = 'k', bins = 25)
+          plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
+          plt.title(feature + " distribution", size=5)
+          plt.xlabel(feature, size=5)
+          plt.ylabel('Fréquence', size=5)
+          plt.xticks(size=5)
+          plt.yticks(size=5)
+          st.pyplot(fig)
+
+        elif feature=='DAYS_EMPLOYED':
+          st.write( feature)
+          h1=plt.hist(int(df_['DAYS_EMPLOYED']/-365), edgecolor = 'k', bins = 25)
+          plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
+          plt.title(feature + " distribution", size=5)
+          plt.xlabel(feature, size=5)
+          plt.ylabel('Fréquence', size=5)
+          plt.xticks(size=5)
+          plt.yticks(size=5)
+          st.pyplot(fig)
+        
+        else:
+          st.write( feature)
+          h1=plt.hist(df_[feature], edgecolor = 'k', bins = 25)
+          plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
+          plt.title(feature + " distribution", size=5)
+          plt.xlabel(feature, size=5)
+          plt.ylabel('Fréquence', size=5)
+          plt.xticks(size=5)
+          plt.yticks(size=5)
+          st.pyplot(fig)
