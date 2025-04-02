@@ -184,7 +184,7 @@ if st.sidebar.checkbox("Visualisez l'analyse bivarié des montants de l'annuité
         #sm = plt.cm.ScalarMappable(cmap='viridis', norm=norm)
         #sm.set_array([])
         #ax.figure.colorbar(sm)
-        plt.title('Montant de l'annuité du client en fonction de la durée du crédit', size=5)
+        plt.title("Montant de l'annuité du client en fonction de la durée du crédit", size=5)
         plt.xlabel('Annuité en dollars', size=5)
         plt.ylabel('Durée du crédit en années', size=5)
         plt.xticks(size=5)
