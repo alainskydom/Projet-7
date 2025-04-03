@@ -145,7 +145,7 @@ for feature in features:
          plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
          plt.title(feature + " distribution", size=5)
          plt.xlabel(feature, size=5)
-         plt.ylabel('Fréquence', size=5)
+         plt.ylabel("Nombre d'observations", size=5)
          plt.xticks(size=5)
          plt.yticks(size=5)
          st.pyplot(fig)
