@@ -142,7 +142,7 @@ for feature in features:
         if feature=='DAYS_BIRTH':
         # Plot the distribution of feature
           st.write( feature)
-          h1=plt.hist(df_['DAYS_BIRTH']/365, edgecolor = 'k', bins = 25)
+          h1=plt.hist(int(df_['DAYS_BIRTH']), edgecolor = 'k', bins = 25)
           plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
           plt.title(feature + " distribution", size=5)
           plt.xlabel(feature, size=5)
