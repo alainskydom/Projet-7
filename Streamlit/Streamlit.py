@@ -142,7 +142,8 @@ for feature in features:
         if feature=='DAYS_BIRTH':
         # Plot the distribution of feature
           st.write( feature)
-          age=int(df_['DAYS_BIRTH']/365)
+          age=df_['DAYS_BIRTH']/365
+          age=age.values
           h1=plt.hist(age.astype(int), edgecolor = 'k', bins = 25)
           plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
           plt.title(feature + " distribution", size=5)
