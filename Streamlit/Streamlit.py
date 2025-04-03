@@ -104,7 +104,7 @@ if run:
     #features = df_selection.to_numpy().reshape(1, -1)
     score = best_model.predict_proba(df_selection)[:, 1]
     #features = df_.loc[ID, df_calc.columns].to_numpy().reshape(1, -1)
-    st.write("Le score du client est le suivant ", score)
+    st.write("The Score of the Client is ", score)
   
 
 
@@ -142,9 +142,8 @@ for feature in features:
         if feature=='DAYS_BIRTH':
         # Plot the distribution of feature
           st.write( feature)
-          age=df_['DAYS_BIRTH']/365
-          h1=plt.hist(age, edgecolor = 'k', bins = 25)
-          plt.axvline(int(df_[feature][df_.index==id]/365), color="red", linestyle=":")
+          h1=plt.hist(int(df_['DAYS_BIRTH']/365), edgecolor = 'k', bins = 25)
+          plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
           plt.title(feature + " distribution", size=5)
           plt.xlabel(feature, size=5)
           plt.ylabel('Fréquence', size=5)
@@ -154,9 +153,8 @@ for feature in features:
 
         elif feature=='DAYS_EMPLOYED':
           st.write( feature)
-          Anciennete=df_['DAYS_EMPLOYED']/365
-          h1=plt.hist(Anciennete, edgecolor = 'k', bins = 25)
-          plt.axvline(int(df_[feature][df_.index==id]/-365), color="red", linestyle=":")
+          h1=plt.hist(int(df_['DAYS_EMPLOYED']/-365), edgecolor = 'k', bins = 25)
+          plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
           plt.title(feature + " distribution", size=5)
           plt.xlabel(feature, size=5)
           plt.ylabel('Fréquence', size=5)
@@ -174,23 +172,3 @@ for feature in features:
           plt.xticks(size=5)
           plt.yticks(size=5)
           st.pyplot(fig)
-
-if st.sidebar.checkbox("Visualisez l'analyse bivarié des montants de l'annuité et de la durée du crédit"):
-        st.write( 'Annuité et durée du crédit')
-        #data_score=load_data_predict()
-        fig=plt.figure(figsize=(8,8))
-        ax=plt.scatter(x=df_['CREDIT_TERM'], y=df_['AMT_ANNUITY'], cmap='viridis')
-        plt.axvline(df_['CREDIT_TERM'][df_.index==id], color="red", linestyle=":")
-        plt.axhline(df_['AMT_ANNUITY'][df_.index==id], color="red", linestyle=":")
-        #norm = plt.Normalize(data_score['score'].min()*100, data_score['score'] .max()*100)
-        #sm = plt.cm.ScalarMappable(cmap='viridis', norm=norm)
-        #sm.set_array([])
-        #ax.figure.colorbar(sm)
-        plt.title("Montant de l'annuité du client en fonction de la durée du crédit", size=5)
-        plt.xlabel('Annuité en dollars', size=5)
-        plt.ylabel('Durée du crédit en années', size=5)
-        plt.xticks(size=5)
-        plt.yticks(size=5)
-        plt.ylim([1e4, 3e6])
-        plt.xlim([1e5, 8e5])
-        st.pyplot(fig)
