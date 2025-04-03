@@ -37,7 +37,7 @@ best_model = load_model()
 # Charger les données
 df_ = pd.read_csv(r"Streamlit/df_api_1000.csv")
 df_=df_.loc[:, ~df_.columns.str.match ('Unnamed')]
-df_=df_[df_['DAYS_EMPLOYED>=0]
+df_=df_[df_['DAYS_EMPLOYED']>=0]
 #df_calc= df_.drop(['TARGET', 'SK_ID_CURR'], axis=1)
 # df.drop(columns='index', inplace=True)
 
