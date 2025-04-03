@@ -37,6 +37,7 @@ best_model = load_model()
 # Charger les données
 df_ = pd.read_csv(r"Streamlit/df_api_1000.csv")
 df_=df_.loc[:, ~df_.columns.str.match ('Unnamed')]
+df_=df_[df_['DAYS_EMPLOYED>=0]
 #df_calc= df_.drop(['TARGET', 'SK_ID_CURR'], axis=1)
 # df.drop(columns='index', inplace=True)
 
@@ -154,7 +155,7 @@ for feature in features:
 
         elif feature=='DAYS_EMPLOYED':
           st.write( feature)
-          Anciennete=df_['DAYS_EMPLOYED']/-365
+          Anciennete=df_['DAYS_EMPLOYED']/365
           h1=plt.hist(Anciennete, edgecolor = 'k', bins = 25)
           plt.axvline(int(df_[feature][df_.index==id]/-365), color="red", linestyle=":")
           plt.title(feature + " distribution", size=5)
