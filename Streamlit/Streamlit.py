@@ -154,9 +154,9 @@ for feature in features:
 
         elif feature=='DAYS_EMPLOYED':
           st.write( feature)
-          Anciennete=df_['DAYS_EMPLOYED']/365
+          Anciennete=df_['DAYS_EMPLOYED']/-365
           h1=plt.hist(Anciennete, edgecolor = 'k', bins = 25)
-          plt.axvline(int(df_[feature][df_.index==id]), color="red", linestyle=":")
+          plt.axvline(int(df_[feature][df_.index==id]/365), color="red", linestyle=":")
           plt.title(feature + " distribution", size=5)
           plt.xlabel(feature, size=5)
           plt.ylabel('Fréquence', size=5)
